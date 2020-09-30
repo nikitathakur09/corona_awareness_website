@@ -1,0 +1,146 @@
+<!DOCTYPE html> 
+<html> 
+  
+<head> 
+<style>
+body {background-color: grey;
+text-align: center;
+ border: 2px solid black;
+  border: 5px solid white;
+  padding: 30px;}
+ h1{
+	background: #43D1AF;
+	padding: 20px 0;
+	font-size: 140%;
+	font-weight: 300;
+	text-align: center;
+	color: #fff;
+	margin: -16px -16px 16px -16px;
+}
+ul{display: block;
+	text-align: center;
+	padding: 0;
+	margin: 0px 0px 20px 0px;
+	color: black;
+	font-size:x-large;
+}
+
+
+p{color: solid black;
+text-align :center;}
+</style>
+    <title> 
+        Get value of selected 
+        radio button 
+    </title> 
+</head> 
+  
+<body> 
+    <h1>
+        Corona self assessment test. 
+     </h1>
+           
+<form>
+<ul>
+FIRST NAME : <br>
+<input type : "text"  id="name1" name ="firstname" onblur="checkname();<span id ="name1"</span><br>
+
+LAST NAME : <br>
+<input type : "text" name ="lastname"><br>
+
+
+<p>AGE GROUP:</p> 
+  <input type="radio" name="age" value="below5" id="a1"> BELOW 5 YEARS
+ <br>  <input type="radio" name="age" value="5-15" id="a2">BETWEEN 5 TO 15 YEARS
+ <br>  <input type="radio" name="age" value="15-30" id ="a3">BETWEEN 15 TO 30 YEARS 
+ <br>  <input type="radio" name="age" value="30-50" id="a4">BETWEEN 30 TO 50 YEARS
+ <br>  <input type="radio" name="age" value="50-80" id="a5">BETWEEN 50 TO 80 YEARS
+ <br>  <input type="radio" name="age" value="above80" id="a6">ABOVE 80 YEARS
+ 
+ 
+ <p>ARE YOU FACING ANY OF THE GIVEN SYMPTOMS FROM THE LAST 48 HOURS:FEVER, COUGH , COLD, SORE THROAT, LOSS OF SMELL OR TASTE ,OR A CHANGE IN TASTE, CHILLS OR REPEATED SHAKING WITH CHILLS</p> 
+  <input type="radio" name="symp" value="below5" id="b1"> none of the symptoms
+ <br>  <input type="radio" name="symp" value="5-15" id="b2"> one of the symptoms
+ <br>  <input type="radio" name="symp" value="15-30" id ="b3"> more than 5 symptoms
+ <br>  <input type="radio" name="symp" value="30-50" id="b4"> all the symptoms
+ 
+ 
+ <p>HAVE YOU CAME IN CONTACT WITH ANY COVID PATIENT OR BEEN WITHIN 6 FEET OF A PERSON WITH A LAB -CONFIRMED CASE OF COVID 19 FOR ATLEAST 5 MINUTES?</p> 
+  <input type="radio" name="contact" value="below5" id="c1"> yes
+ <br>  <input type="radio" name="contact" value="5-15" id="c2"> no
+
+ 
+ <p>HAVE YOU TRAVELLED ANYWHERE INTERNATIONALLY IN THE LAST 28-45 DAYS </p> 
+  <input type="radio" name="travel" value="below5" id="d1"> yes
+ <br>  <input type="radio" name="travel" value="5-15" id="d2"> no
+ 
+ <p>HAS A PUBLIC HEALTH OFFICIAL ADVISED YOU TO GET TESTED FOR COVID-19?</p> 
+  <input type="radio" name="doctor" value="below5" id="e1"> yes
+ <br>  <input type="radio" name="doctor" value="5-15" id="e2"> no
+
+      
+    <br> 
+ </ul>  
+<button onclick="myFunction()">Click me</button>
+
+<p id ="result"></p>
+
+<p id ="dem"></p><p id ="dem1"></p><p id ="dem2"></p>
+<p id="demo"></p>
+
+    </form>  
+
+    <script> 
+        function myFunction() {
+       var name=document.getElementById("name1").value ;
+        var points=0;
+        if(
+document.getElementById("a1").checked)
+points =5;
+else if (document.getElementById("a2").checked)
+points=1;
+else if (document.getElementById("a3").checked)
+points=1;         
+else if (document.getElementById("a4").checked)
+points=2;         
+else if (document.getElementById("a5").checked)
+points=3;         
+else if (document.getElementById("a6").checked)
+points=10;
+if(document.getElementById("b1").checked)
+points +=0;
+else if (document.getElementById("b2").checked)
+points+=2;
+else if (document.getElementById("b3").checked)
+points+=5;         
+else if (document.getElementById("b4").checked)
+points+=10;         
+ if (document.getElementById("c1").checked)
+points+=5;         
+else if (document.getElementById("c2").checked)
+points+=0; 
+if (document.getElementById("d1").checked)
+points+=5;         
+  else if (document.getElementById("d2").checked)
+points+=0;
+ if (document.getElementById("e1").checked)
+points+=5;         
+else if (document.getElementById("e2").checked)
+points+=0;  
+             var name= document.getElementById("name1").value;
+			 
+			 if (points>0 && points<5)
+			 alert("HELLO " + name+"\n low risk of infection");
+			 else if (points>5 && points<15)
+			 alert("HELLO "+name+"\n moderate risk ");
+			 else if(points>15)
+			 alert("HELLO "+name+"\n high risk");
+} 
+         
+    </script> 
+</body> 
+</html>                     
+
+
+
+
